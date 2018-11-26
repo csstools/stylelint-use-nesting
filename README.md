@@ -23,7 +23,7 @@ Add [Stylelint Use Nesting] to your [stylelint configuration].
     "stylelint-use-nesting"
   ],
   "rules": {
-    "csstools/stylelint-use-nesting": "always" || "ignore"
+    "csstools/use-nesting": "always" || "ignore"
   }
 }
 ```
