@@ -63,6 +63,36 @@ While the following patterns are considered violations:
 If the first option is `"ignore"` or `null`, then [Stylelint Use Nesting] does
 nothing.
 
+## Secondary Options
+
+### except
+
+The `except` option ignores reporting or autofixing rules where the potentially
+nesting portion of the selector matches a case-insensitive string or regular
+expression.
+
+```js
+{
+  "rules": {
+    "csstools/use-nesting": ["always", { "except": [':selection', /^:dir/i] }]
+  }
+}
+```
+
+### only
+
+The `except` option limits reporting and autofixing to rules where the
+potentially nesting portion of the selector matches a case-insensitive string
+or regular expression.
+
+```js
+{
+  "rules": {
+    "csstools/use-nesting": ["always", { "only": ['.js', /^:(hover|focus)/i] }]
+  }
+}
+```
+
 [cli-img]: https://img.shields.io/travis/csstools/stylelint-use-nesting/master.svg
 [cli-url]: https://travis-ci.org/csstools/stylelint-use-nesting
 [git-img]: https://img.shields.io/badge/support-chat-blue.svg

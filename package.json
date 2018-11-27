@@ -1,6 +1,6 @@
 {
   "name": "stylelint-use-nesting",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Enforce nesting when it is possible in CSS",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
