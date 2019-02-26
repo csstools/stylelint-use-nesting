@@ -1,6 +1,6 @@
 {
   "name": "stylelint-use-nesting",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Enforce nesting when it is possible in CSS",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
@@ -16,8 +16,9 @@
     "index.mjs.map"
   ],
   "scripts": {
+    "build": "rollup -c .rollup.js --silent",
     "prepublishOnly": "npm test",
-    "pretest": "rollup -c .rollup.js --silent",
+    "pretest": "npm run build",
     "test": "npm run test:js && npm run test:tape",
     "test:js": "eslint src/*.js --cache --ignore-path .gitignore --quiet",
     "test:tape": "stylelint-tape"
@@ -27,16 +28,16 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.1.6",
-    "@babel/preset-env": "^7.1.6",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
     "babel-eslint": "^10.0.1",
-    "eslint": "^5.9.0",
+    "eslint": "^5.14.1",
     "eslint-config-dev": "^2.0.0",
     "pre-commit": "^1.2.2",
-    "rollup": "^0.67.3",
-    "rollup-plugin-babel": "^4.0.3",
-    "stylelint": "^9.8.0",
-    "stylelint-tape": "^1.0.0"
+    "rollup": "^1.3.0",
+    "rollup-plugin-babel": "^4.3.2",
+    "stylelint": "^9.10.1",
+    "stylelint-tape": "^1.0.1"
   },
   "peerDependencies": {
     "stylelint": "^9.8.0"

@@ -2,7 +2,7 @@ export default function areRulesPotentialNestingRule(rule1, rule2, opts) {
 	const except = [].concat(Object(opts).except || []);
 	const only = [].concat(Object(opts).only || []);
 
-	return rule2.selectors.every(
+	return rule1.selectors && rule2.selectors && rule2.selectors.every(
 		rule2Selector => rule1.selectors.every(
 			rule1Selector =>
 				rule2Selector.length < rule1Selector.length &&

@@ -82,6 +82,27 @@ module.exports = {
 			args: ['always', { only: 'body' }]
 		},
 
+		/* Test Nesting Media Rules */
+		{
+			source: '.foo { color: blue; } @media (min-width: 960px) { .foo { color: rebeccapurple; } }',
+			warnings: 1
+		},
+		{
+			source: '.foo { color: blue; } @media (min-width: 960px) { .foo { color: rebeccapurple; } }',
+			warnings: 0,
+			args: ['always', { except: /foo$/i }]
+		},
+		{
+			source: '.foo { color: blue; } @media (min-width: 960px) { .foo { color: rebeccapurple; } }',
+			warnings: 0,
+			args: ['always', { only: /bar/i }]
+		},
+		{
+			source: '.foo { color: blue; } @media (min-width: 960px) { .foo { color: rebeccapurple; } }',
+			expect: '.foo { color: blue; @media (min-width: 960px) { color: rebeccapurple } }',
+			args: ['always']
+		},
+
 		/* Test Ignores Rules */
 		{
 			source: '.foo { color: blue; } .foo__bar { color: rebeccapurple; } .foo--bar { color: red; }',
