@@ -46,6 +46,16 @@ considered violations:
 }
 ```
 
+```pcss
+.example {
+  color: blue;
+
+  @media (min-width: 640px) {
+    color: rebeccapurple;
+  }
+}
+```
+
 While the following patterns are considered violations:
 
 ```pcss
@@ -55,6 +65,18 @@ While the following patterns are considered violations:
 
 .example:hover {
   color: rebeccapurple;
+}
+```
+
+```pcss
+.example {
+  color: blue;
+}
+
+@media (min-width: 640px) {
+  .example {
+    color: rebeccapurple;
+  }
 }
 ```
 

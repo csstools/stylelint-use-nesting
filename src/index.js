@@ -100,7 +100,13 @@ export default stylelint.createPlugin(ruleName, (action, opts, context) => {
 });
 
 export const messages = stylelint.utils.ruleMessages(ruleName, {
-	expected: (node, prev) => `Expected "${node.selector}" inside "${prev.selector}".`
+	expected: (node, prev) => {
+		const outside = prev.type === 'atrule' ? `@${prev.name} ${prev.params}` : node.selector;
+		const inside = prev.type === 'atrule' ? node.selector : prev.selector;
+		const message = `Expected "${outside}" inside "${inside}".`;
+
+		return message;
+	}
 });
 
 const report = (rule1, rule2, result) => {

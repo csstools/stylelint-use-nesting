@@ -3,7 +3,9 @@ module.exports = {
 		/* Test Nesting Rules */
 		{
 			source: '.foo { color: blue; } .foo:hover, .foo:focus { color: rebeccapurple; } .foo:focus-within { color: red; }',
-			warnings: 1,
+			warnings: [
+				'Expected ".foo:hover, .foo:focus" inside ".foo". (csstools/use-nesting)'
+			]
 		},
 		{
 			source: '.foo { color: blue; } .foo:hover, .foo:focus { color: rebeccapurple; } .foo:focus-within { color: red; }',
@@ -85,7 +87,9 @@ module.exports = {
 		/* Test Nesting Media Rules */
 		{
 			source: '.foo { color: blue; } @media (min-width: 960px) { .foo { color: rebeccapurple; } }',
-			warnings: 1
+			warnings: [
+				'Expected "@media (min-width: 960px)" inside ".foo". (csstools/use-nesting)'
+			]
 		},
 		{
 			source: '.foo { color: blue; } @media (min-width: 960px) { .foo { color: rebeccapurple; } }',
