@@ -1,5 +1,10 @@
 # Changes to Stylelint Use Nesting
 
+### 2.0.0 (May 12, 2018)
+
+- Updated: peer `stylelint` to 10.0.1 (major)
+- Updated: Node 8+ compatibility (major)
+
 ### 1.2.1 (February 27, 2019)
 
 - Fixed an issue with nested media not warning correctly
