@@ -13,7 +13,7 @@ export default {
 					corejs: 3,
 					loose: true,
 					modules: false,
-					targets: { node: 8 },
+					targets: { node: 10 },
 					useBuiltIns: 'entry'
 				}]
 			]

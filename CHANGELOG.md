@@ -1,5 +1,10 @@
 # Changes to Stylelint Use Nesting
 
+### 3.0.0 (May 12, 2020)
+
+- Updated: peer `stylelint` to 10 - 13 (major)
+- Updated: Node 10+ compatibility (major)
+
 ### 2.0.0 (May 12, 2018)
 
 - Updated: peer `stylelint` to 10.0.1 (major)
