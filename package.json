@@ -1,6 +1,6 @@
 {
   "name": "stylelint-use-nesting",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Enforce nesting when it is possible in CSS",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
@@ -23,9 +23,8 @@
     "test:tape": "stylelint-tape"
   },
   "engines": {
-    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+    "node": ">=16.0.0"
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
@@ -35,11 +34,11 @@
     "pre-commit": "^1.2.2",
     "rollup": "^2.9.1",
     "rollup-plugin-babel": "^4.4.0",
-    "stylelint": "^12.0.0",
-    "stylelint-tape": "^2.0.0"
+    "stylelint": "^14.9.1",
+    "stylelint-tape": "^3.0.0"
   },
   "peerDependencies": {
-    "stylelint": "10 - 14"
+    "stylelint": ">= 10"
   },
   "eslintConfig": {
     "extends": "dev",

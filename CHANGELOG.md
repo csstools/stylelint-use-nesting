@@ -1,5 +1,11 @@
 # Changes to Stylelint Use Nesting
 
+### 4.0.0 (Jul 29, 2022)
+
+- Updated: peer `stylelint` to >= 10 (major)
+- Updated: Node 16+ compatibility (major)
+- Added: attribute selector support (minor)
+
 ### 3.0.0 (May 12, 2020)
 
 - Updated: peer `stylelint` to 10 - 13 (major)
