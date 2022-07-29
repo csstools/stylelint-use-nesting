@@ -23,6 +23,11 @@ module.exports = {
 			args: ['always']
 		},
 		{
+			source: '.foo { color: blue; } .foo[data-bar] { color: red; }',
+			expect: '.foo { color: blue; &[data-bar] { color: red; } }',
+			args: ['always']
+		},
+		{
 			source: '.foo { color: blue; } .foo:hover, .foo:focus { color: rebeccapurple; } .foo:focus-within { color: red; }',
 			expect: '.foo { color: blue; &:hover, &:focus { color: rebeccapurple; } } .foo:focus-within { color: red; }',
 			args: ['always', { except: /^:focus-within/i }]
