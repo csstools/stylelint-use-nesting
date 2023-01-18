@@ -57,7 +57,7 @@ export default stylelint.createPlugin(ruleName, (action, opts, context) => {
 							} else if (areRulesPotentialNestingAtRule(rule, prev, opts)) {
 								// fix or report the current rule if it could be nested inside the previous rule
 								if (shouldFix) {
-									fixNestingAtRule(rule, prev);
+									fixNestingAtRule(rule, prev, opts);
 
 									isProcessing = true;
 								} else {
@@ -66,7 +66,7 @@ export default stylelint.createPlugin(ruleName, (action, opts, context) => {
 							} else if (areRulesPotentialNestingAtRule(prev, rule, opts)) {
 								// fix or report the previous rule if it could be nested inside the current rule
 								if (shouldFix) {
-									fixNestingAtRule(prev, rule);
+									fixNestingAtRule(prev, rule, opts);
 
 									isProcessing = true;
 								} else {

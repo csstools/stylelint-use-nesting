@@ -115,6 +115,18 @@ or regular expression.
 }
 ```
 
+### syntax
+
+The `syntax` option allows you to specify the syntax of the source files being processed. For SCSS syntax set the value to `scss`.
+
+```js
+{
+  "rules": {
+    "csstools/use-nesting": ["always", { "syntax": "scss" }]
+  }
+}
+```
+
 [cli-img]: https://img.shields.io/travis/csstools/stylelint-use-nesting/main.svg
 [cli-url]: https://travis-ci.org/csstools/stylelint-use-nesting
 [git-img]: https://img.shields.io/badge/support-chat-blue.svg
