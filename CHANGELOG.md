@@ -1,5 +1,9 @@
 # Changes to Stylelint Use Nesting
 
+### 4.1.0 (March 8, 2022)
+
+- Added: support for SCSS syntax
+
 ### 4.0.0 (Jul 29, 2022)
 
 - Updated: peer `stylelint` to >= 10 (major)

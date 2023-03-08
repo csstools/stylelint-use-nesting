@@ -18,7 +18,7 @@ Pull requests are the greatest contributions, so be sure they are focused in
 scope and avoid unrelated commits.
 
 1. To begin; [fork this project], clone your fork, and add our upstream.
-   ```bash
+   ```shell
    # Clone your fork of the repo into the current directory
    git clone git@github.com:YOUR_USER/stylelint-use-nesting.git
 
@@ -33,25 +33,25 @@ scope and avoid unrelated commits.
    ```
 
 2. Create a branch for your feature or fix:
-   ```bash
+   ```shell
    # Move into a new branch for your feature
    git checkout -b feature/thing
    ```
-   ```bash
+   ```shell
    # Move into a new branch for your fix
    git checkout -b fix/something
    ```
 
 3. If your code follows our practices, then push your feature branch:
-   ```bash
+   ```shell
    # Test current code
    npm test
    ```
-   ```bash
+   ```shell
    # Push the branch for your new feature
    git push origin feature/thing
    ```
-   ```bash
+   ```shell
    # Or, push the branch for your update
    git push origin update/something
    ```

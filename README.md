@@ -11,7 +11,7 @@ possible in CSS.
 
 Add [stylelint] and [Stylelint Use Nesting] to your project.
 
-```bash
+```shell
 npm install stylelint stylelint-use-nesting --save-dev
 ```
 
