@@ -63,6 +63,8 @@ module.exports = {
 			warnings: 0,
 			args: ['always', { only: /^html$/i }]
 		},
+
+		// Proposal nesting syntax
 		{
 			source: '.foo { color: blue; } body .foo { color: rebeccapurple; } html .foo { color: red; }',
 			expect: '.foo { color: blue; @nest body & { color: rebeccapurple; } @nest html & { color: red; } }',
@@ -87,6 +89,33 @@ module.exports = {
 			source: '.foo { color: blue; } body .foo { color: rebeccapurple; } html .foo { color: red; }',
 			expect: '.foo { color: blue; @nest body & { color: rebeccapurple; } } html .foo { color: red; }',
 			args: ['always', { only: 'body' }]
+		},
+
+		// SCSS nesting syntax
+		{
+			source: '.foo { color: blue; } body .foo { color: rebeccapurple; } html .foo { color: red; }',
+			expect: '.foo { color: blue; body & { color: rebeccapurple; } html & { color: red; } }',
+			args: ['always', { syntax: 'scss' }]
+		},
+		{
+			source: '.foo { color: blue; } body .foo { color: rebeccapurple; } html .foo { color: red; }',
+			expect: '.foo { color: blue; body & { color: rebeccapurple; } } html .foo { color: red; }',
+			args: ['always', { syntax: 'scss', except: /^html$/i }]
+		},
+		{
+			source: '.foo { color: blue; } body .foo { color: rebeccapurple; } html .foo { color: red; }',
+			expect: '.foo { color: blue; body & { color: rebeccapurple; } } html .foo { color: red; }',
+			args: ['always', { syntax: 'scss', except: 'html' }]
+		},
+		{
+			source: '.foo { color: blue; } body .foo { color: rebeccapurple; } html .foo { color: red; }',
+			expect: '.foo { color: blue; body & { color: rebeccapurple; } } html .foo { color: red; }',
+			args: ['always', { syntax: 'scss', only: /^body$/i }]
+		},
+		{
+			source: '.foo { color: blue; } body .foo { color: rebeccapurple; } html .foo { color: red; }',
+			expect: '.foo { color: blue; body & { color: rebeccapurple; } } html .foo { color: red; }',
+			args: ['always', { syntax: 'scss', only: 'body' }]
 		},
 
 		/* Test Nesting Media Rules */
