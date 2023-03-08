@@ -17,12 +17,12 @@ export default stylelint.createPlugin(ruleName, (action, opts, context) => {
 		const isActionValid = stylelint.utils.validateOptions(result, ruleName, {
 			actual: action,
 			possible() {
-				return is(action, ['always', 'ignore', true, false, null]);
+				return is(action, [ 'always', 'ignore', true, false, null ]);
 			}
 		});
 
 		if (isActionValid) {
-			if (is(action, ['always', true])) {
+			if (is(action, [ 'always', true ])) {
 				result.root.walk(rule => {
 					let isProcessing = true;
 
