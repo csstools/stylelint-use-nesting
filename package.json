@@ -7,17 +7,15 @@
   "repository": "csstools/stylelint-use-nesting",
   "homepage": "https://github.com/csstools/stylelint-use-nesting#readme",
   "bugs": "https://github.com/csstools/stylelint-use-nesting/issues",
-  "main": "index.cjs",
+  "main": "index.mjs",
+  "type": "module",
   "module": "index.mjs",
   "exports": {
     ".": {
-      "import": "./index.mjs",
-      "node": "./index.cjs"
+      "import": "./index.mjs"
     }
   },
   "files": [
-    "index.cjs",
-    "index.cjs.map",
     "index.mjs",
     "index.mjs.map"
   ],
@@ -38,7 +36,7 @@
     "eslint-config-dev": "3.1.0",
     "pre-commit": "1.2.2",
     "rollup": "3.18.0",
-    "stylelint": "15.2.0",
+    "stylelint": "^16.0.1",
     "stylelint-tape": "3.0.0"
   },
   "peerDependencies": {
