@@ -1,23 +1,20 @@
 {
   "name": "stylelint-use-nesting",
-  "version": "4.1.0",
+  "version": "5.0.0",
   "description": "Enforce nesting when it is possible in CSS",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
   "repository": "csstools/stylelint-use-nesting",
   "homepage": "https://github.com/csstools/stylelint-use-nesting#readme",
   "bugs": "https://github.com/csstools/stylelint-use-nesting/issues",
-  "main": "index.cjs",
-  "module": "index.mjs",
+  "main": "index.mjs",
+  "type": "module",
   "exports": {
     ".": {
-      "import": "./index.mjs",
-      "node": "./index.cjs"
+      "import": "./index.mjs"
     }
   },
   "files": [
-    "index.cjs",
-    "index.cjs.map",
     "index.mjs",
     "index.mjs.map"
   ],
@@ -30,19 +27,18 @@
     "test:tape": "stylelint-tape"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=20.0.0"
   },
-  "dependencies": {},
   "devDependencies": {
     "eslint": "8.35.0",
     "eslint-config-dev": "3.1.0",
     "pre-commit": "1.2.2",
     "rollup": "3.18.0",
-    "stylelint": "15.2.0",
-    "stylelint-tape": "3.0.0"
+    "stylelint": "16.0.0",
+    "stylelint-tape": "5.0.0"
   },
   "peerDependencies": {
-    "stylelint": ">= 10"
+    "stylelint": ">= 16"
   },
   "eslintConfig": {
     "extends": "dev"

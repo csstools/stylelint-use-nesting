@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	'csstools/use-nesting': [
 		/* Test Nesting Rules */
 		{

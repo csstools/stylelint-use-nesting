@@ -9,7 +9,12 @@ import fixNestingRule from './lib/fix-nesting-rule';
 
 export const ruleName = 'csstools/use-nesting';
 
-export default stylelint.createPlugin(ruleName, (action, opts, context) => {
+const meta = {
+	url: 'https://github.com/csstools/stylelint-use-nesting',
+	fixable: true,
+};
+
+const ruleFunction = (action, opts, context) => {
 	const shouldFix = is(context, 'fix', true);
 
 	return async (root, result) => {
@@ -97,9 +102,9 @@ export default stylelint.createPlugin(ruleName, (action, opts, context) => {
 			}
 		}
 	};
-});
+}
 
-export const messages = stylelint.utils.ruleMessages(ruleName, {
+const messages = stylelint.utils.ruleMessages(ruleName, {
 	expected: (node, prev) => {
 		const outside = prev.type === 'atrule' ? `@${prev.name} ${prev.params}` : node.selector;
 		const inside = prev.type === 'atrule' ? node.selector : prev.selector;
@@ -117,3 +122,9 @@ const report = (rule1, rule2, result) => {
 		ruleName
 	});
 };
+
+ruleFunction.ruleName = ruleName;
+ruleFunction.meta = meta;
+ruleFunction.messages = messages;
+
+export default stylelint.createPlugin(ruleName, ruleFunction);

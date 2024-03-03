@@ -1,5 +1,11 @@
 # Changes to Stylelint Use Nesting
 
+### 5.0.0 (March 3, 2024)
+
+- Updated: peer `stylelint` to >= 16 (major)
+- Updated: Node 20+ compatibility (major)
+- Drop commonjs support (major)
+
 ### 4.1.0 (March 8, 2022)
 
 - Added: support for SCSS syntax
