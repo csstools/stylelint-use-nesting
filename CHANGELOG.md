@@ -1,5 +1,9 @@
 # Changes to Stylelint Use Nesting
 
+### 5.1.0 (March 3, 2024)
+
+- Remove `@nest` [#15](https://github.com/csstools/stylelint-use-nesting/issues/15)
+
 ### 5.0.0 (March 3, 2024)
 
 - Updated: peer `stylelint` to >= 16 (major)

@@ -67,27 +67,27 @@ export default {
 		// Proposal nesting syntax
 		{
 			source: '.foo { color: blue; } body .foo { color: rebeccapurple; } html .foo { color: red; }',
-			expect: '.foo { color: blue; @nest body & { color: rebeccapurple; } @nest html & { color: red; } }',
+			expect: '.foo { color: blue; body & { color: rebeccapurple; } html & { color: red; } }',
 			args: ['always']
 		},
 		{
 			source: '.foo { color: blue; } body .foo { color: rebeccapurple; } html .foo { color: red; }',
-			expect: '.foo { color: blue; @nest body & { color: rebeccapurple; } } html .foo { color: red; }',
+			expect: '.foo { color: blue; body & { color: rebeccapurple; } } html .foo { color: red; }',
 			args: ['always', { except: /^html$/i }]
 		},
 		{
 			source: '.foo { color: blue; } body .foo { color: rebeccapurple; } html .foo { color: red; }',
-			expect: '.foo { color: blue; @nest body & { color: rebeccapurple; } } html .foo { color: red; }',
+			expect: '.foo { color: blue; body & { color: rebeccapurple; } } html .foo { color: red; }',
 			args: ['always', { except: 'html' }]
 		},
 		{
 			source: '.foo { color: blue; } body .foo { color: rebeccapurple; } html .foo { color: red; }',
-			expect: '.foo { color: blue; @nest body & { color: rebeccapurple; } } html .foo { color: red; }',
+			expect: '.foo { color: blue; body & { color: rebeccapurple; } } html .foo { color: red; }',
 			args: ['always', { only: /^body$/i }]
 		},
 		{
 			source: '.foo { color: blue; } body .foo { color: rebeccapurple; } html .foo { color: red; }',
-			expect: '.foo { color: blue; @nest body & { color: rebeccapurple; } } html .foo { color: red; }',
+			expect: '.foo { color: blue; body & { color: rebeccapurple; } } html .foo { color: red; }',
 			args: ['always', { only: 'body' }]
 		},
 
