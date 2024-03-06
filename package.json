@@ -1,6 +1,6 @@
 {
   "name": "stylelint-use-nesting",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "description": "Enforce nesting when it is possible in CSS",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
   "license": "CC0-1.0",
@@ -9,11 +9,6 @@
   "bugs": "https://github.com/csstools/stylelint-use-nesting/issues",
   "main": "index.mjs",
   "type": "module",
-  "exports": {
-    ".": {
-      "import": "./index.mjs"
-    }
-  },
   "files": [
     "index.mjs",
     "index.mjs.map"

@@ -1,5 +1,9 @@
 # Changes to Stylelint Use Nesting
 
+### 5.1.1 (March 6, 2024)
+
+- Remove `exports` field from `package.json` [#18](https://github.com/csstools/stylelint-use-nesting/issues/18)
+
 ### 5.1.0 (March 3, 2024)
 
 - Remove `@nest` [#15](https://github.com/csstools/stylelint-use-nesting/issues/15)
