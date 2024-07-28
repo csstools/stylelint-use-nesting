@@ -1,13 +1,14 @@
 import stylelint from 'stylelint';
-import is from './lib/is';
-import areRulesPotentialNestingAtRule from './lib/are-rules-potential-nesting-at-rule';
-import areRulesPotentialNestingMediaRule from './lib/are-rules-potential-nesting-media-rule';
-import areRulesPotentialNestingRule from './lib/are-rules-potential-nesting-rule';
-import fixNestingAtRule from './lib/fix-nesting-at-rule';
-import fixNestingMediaRule from './lib/fix-nesting-media-rule';
-import fixNestingRule from './lib/fix-nesting-rule';
 
-export const ruleName = 'csstools/use-nesting';
+import is from './lib/is.mjs';
+import areRulesPotentialNestingAtRule from './lib/are-rules-potential-nesting-at-rule.mjs';
+import areRulesPotentialNestingMediaRule from './lib/are-rules-potential-nesting-media-rule.mjs';
+import areRulesPotentialNestingRule from './lib/are-rules-potential-nesting-rule.mjs';
+import fixNestingAtRule from './lib/fix-nesting-at-rule.mjs';
+import fixNestingMediaRule from './lib/fix-nesting-media-rule.mjs';
+import fixNestingRule from './lib/fix-nesting-rule.mjs';
+
+const ruleName = 'csstools/use-nesting';
 
 const meta = {
 	url: 'https://github.com/csstools/stylelint-use-nesting',

@@ -1,5 +1,9 @@
 # Changes to Stylelint Use Nesting
 
+### 5.1.2 (Jul 28, 2024)
+
+- Fix `Unknown rule csstools/use-nesting` error
+
 ### 5.1.1 (March 6, 2024)
 
 - Remove `exports` field from `package.json` [#18](https://github.com/csstools/stylelint-use-nesting/issues/18)
