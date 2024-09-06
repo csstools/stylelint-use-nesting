@@ -15,9 +15,7 @@ const meta = {
 	fixable: true,
 };
 
-const ruleFunction = (action, opts, context) => {
-	const shouldFix = is(context, 'fix', true);
-
+const ruleFunction = (action, opts) => {
 	return async (root, result) => {
 		// validate the action
 		const isActionValid = stylelint.utils.validateOptions(result, ruleName, {
@@ -41,62 +39,98 @@ const ruleFunction = (action, opts, context) => {
 						const isPrevValid = prev && (prev.type === 'rule' || prev.type === 'atrule');
 
 						// if the previous node is also a rule
-						if (isRuleValid && isPrevValid) {
-							if (areRulesPotentialNestingRule(rule, prev, opts)) {
-								// fix or report the current rule if it could be nested inside the previous rule
-								if (shouldFix) {
-									fixNestingRule(rule, prev);
+						if (!isRuleValid || !isPrevValid) {
+							continue;
+						}
 
+						if (areRulesPotentialNestingRule(rule, prev, opts)) {
+							report(
+								rule,
+								prev,
+								result,
+								() => {
 									isProcessing = true;
-								} else {
-									report(rule, prev, result);
-								}
-							} else if (areRulesPotentialNestingRule(prev, rule, opts)) {
-								// fix or report the previous rule if it could be nested inside the current rule
-								if (shouldFix) {
-									fixNestingRule(prev, rule);
 
-									isProcessing = true;
-								} else {
-									report(prev, rule, result);
+									fixNestingRule(rule, prev)
 								}
-							} else if (areRulesPotentialNestingAtRule(rule, prev, opts)) {
-								// fix or report the current rule if it could be nested inside the previous rule
-								if (shouldFix) {
+							);
+
+							continue;
+						}
+
+						if (areRulesPotentialNestingRule(prev, rule, opts)) {
+							report(
+								prev,
+								rule,
+								result,
+								() => {
+									isProcessing = true;
+
+									fixNestingRule(prev, rule)
+								}
+							);
+
+							continue;
+						}
+
+						if (areRulesPotentialNestingAtRule(rule, prev, opts)) {
+							report(
+								rule,
+								prev,
+								result,
+								() => {
+									isProcessing = true;
+
 									fixNestingAtRule(rule, prev, opts);
-
-									isProcessing = true;
-								} else {
-									report(rule, prev, result);
 								}
-							} else if (areRulesPotentialNestingAtRule(prev, rule, opts)) {
-								// fix or report the previous rule if it could be nested inside the current rule
-								if (shouldFix) {
+							);
+
+							continue;
+						}
+
+						if (areRulesPotentialNestingAtRule(prev, rule, opts)) {
+							report(
+								prev,
+								rule,
+								result,
+								() => {
+									isProcessing = true;
+
 									fixNestingAtRule(prev, rule, opts);
-
-									isProcessing = true;
-								} else {
-									report(prev, rule, result);
 								}
-							} else if (areRulesPotentialNestingMediaRule(rule, prev, opts)) {
-								// fix or report the current rule if it could be nested inside the previous rule
-								if (shouldFix) {
+							);
+
+							continue;
+						}
+
+						if (areRulesPotentialNestingMediaRule(rule, prev, opts)) {
+							report(
+								rule,
+								prev,
+								result,
+								() => {
+									isProcessing = true;
+
 									fixNestingMediaRule(rule, prev);
-
-									isProcessing = true;
-								} else {
-									report(rule, prev, result);
 								}
-							} else if (areRulesPotentialNestingMediaRule(prev, rule, opts)) {
-								// fix or report the current rule if it could be nested inside the previous rule
-								if (shouldFix) {
+							);
+
+							continue;
+						}
+
+						if (areRulesPotentialNestingMediaRule(prev, rule, opts)) {
+							report(
+								prev,
+								rule,
+								result,
+								() => {
+									isProcessing = true;
+
 									fixNestingMediaRule(prev, rule);
-
-									isProcessing = true;
-								} else {
-									report(prev, rule, result);
 								}
-							}
+							);
+
+							continue;
 						}
 					}
 				});
@@ -115,12 +149,13 @@ const messages = stylelint.utils.ruleMessages(ruleName, {
 	}
 });
 
-const report = (rule1, rule2, result) => {
+const report = (rule1, rule2, result, fix) => {
 	stylelint.utils.report({
 		message: messages.expected(rule1, rule2),
 		node: rule1,
 		result,
-		ruleName
+		ruleName,
+		fix
 	});
 };
 

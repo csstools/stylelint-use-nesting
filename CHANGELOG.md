@@ -1,5 +1,10 @@
 # Changes to Stylelint Use Nesting
 
+### 6.0.0
+
+- Updated: minimum Stylelint version to `v16.9.0`
+- Updated: use the new `report.fix` API
+
 ### 5.1.2 (Jul 28, 2024)
 
 - Fix `Unknown rule csstools/use-nesting` error
