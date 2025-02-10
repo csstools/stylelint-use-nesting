@@ -47,6 +47,11 @@ export default {
 			expect: '.foo { color: blue; &:hover, &:focus { color: rebeccapurple; } } .foo:focus-within { color: red; }',
 			args: ['always', { only: [':hover', ':focus'] }]
 		},
+		{
+			source: ':host { color: blue; } :host(.foo) { color: rebeccapurple; }',
+			expect: ':host { color: blue; } :host(.foo) { color: rebeccapurple; }',
+			args: ['always']
+		},
 
 		/* Test Nesting At-Rules */
 		{
