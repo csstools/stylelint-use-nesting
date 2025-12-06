@@ -1,5 +1,9 @@
 # Changes to Stylelint Use Nesting
 
+### 6.0.1
+
+- Fix false positive with functional pseudo classes (e.g. `:host` vs. `:host()`) [#24](https://github.com/csstools/stylelint-use-nesting/pull/24) by @veyndan
+
 ### 6.0.0
 
 - Updated: minimum Stylelint version to `v16.9.0`
