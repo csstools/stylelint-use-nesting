@@ -52,6 +52,11 @@ export default {
 			expect: ':host { color: blue; } :host(.foo) { color: rebeccapurple; }',
 			args: ['always']
 		},
+		{
+			source: '.foo::file-selector-button { color: blue; } .foo::file-selector-button:hover { color: rebeccapurple; }',
+			expect: '.foo::file-selector-button { color: blue; } .foo::file-selector-button:hover { color: rebeccapurple; }',
+			args: ['always']
+		},
 
 		/* Test Nesting At-Rules */
 		{
