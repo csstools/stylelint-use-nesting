@@ -1,5 +1,11 @@
 # Changes to Stylelint Use Nesting
 
+### 6.0.2
+
+- Fix false positive with selectors containing `&`
+- Fix false positive with selectors containing pseudo elements
+- Fix false positive with relative selectors
+
 ### 6.0.1
 
 - Fix false positive with functional pseudo classes (e.g. `:host` vs. `:host()`) [#24](https://github.com/csstools/stylelint-use-nesting/pull/24) by @veyndan

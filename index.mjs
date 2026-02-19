@@ -7,6 +7,7 @@ import areRulesPotentialNestingRule from './lib/are-rules-potential-nesting-rule
 import fixNestingAtRule from './lib/fix-nesting-at-rule.mjs';
 import fixNestingMediaRule from './lib/fix-nesting-media-rule.mjs';
 import fixNestingRule from './lib/fix-nesting-rule.mjs';
+import canRulesBeRewrittenWithNesting from './lib/can-rules-be-rewritten-with-nesting.mjs';
 
 const ruleName = 'csstools/use-nesting';
 
@@ -43,7 +44,7 @@ const ruleFunction = (action, opts) => {
 							continue;
 						}
 
-						if (areRulesPotentialNestingRule(rule, prev, opts)) {
+						if (areRulesPotentialNestingRule(rule, prev, opts) && canRulesBeRewrittenWithNesting(rule, prev, opts)) {
 							report(
 								rule,
 								prev,
@@ -58,7 +59,7 @@ const ruleFunction = (action, opts) => {
 							continue;
 						}
 
-						if (areRulesPotentialNestingRule(prev, rule, opts)) {
+						if (areRulesPotentialNestingRule(prev, rule, opts) && canRulesBeRewrittenWithNesting(prev, rule, opts)) {
 							report(
 								prev,
 								rule,
@@ -73,7 +74,7 @@ const ruleFunction = (action, opts) => {
 							continue;
 						}
 
-						if (areRulesPotentialNestingAtRule(rule, prev, opts)) {
+						if (areRulesPotentialNestingAtRule(rule, prev, opts) && canRulesBeRewrittenWithNesting(rule, prev, opts)) {
 							report(
 								rule,
 								prev,
@@ -88,7 +89,7 @@ const ruleFunction = (action, opts) => {
 							continue;
 						}
 
-						if (areRulesPotentialNestingAtRule(prev, rule, opts)) {
+						if (areRulesPotentialNestingAtRule(prev, rule, opts) && canRulesBeRewrittenWithNesting(prev, rule, opts)) {
 							report(
 								prev,
 								rule,

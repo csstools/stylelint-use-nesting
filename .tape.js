@@ -52,6 +52,11 @@ export default {
 			expect: ':host { color: blue; } :host(.foo) { color: rebeccapurple; }',
 			args: ['always']
 		},
+		{
+			source: '.foo::file-selector-button { color: blue; } .foo::file-selector-button:hover { color: rebeccapurple; }',
+			expect: '.foo::file-selector-button { color: blue; } .foo::file-selector-button:hover { color: rebeccapurple; }',
+			args: ['always']
+		},
 
 		/* Test Nesting At-Rules */
 		{
@@ -160,6 +165,18 @@ export default {
 		{
 			source: '.test-foo__bar {} .test-foo__bar svg, .test-qux__bar svg {}',
 			expect: '.test-foo__bar {} .test-foo__bar svg, .test-qux__bar svg {}',
+			warnings: 0,
+			args: ['always']
+		},
+		{
+			source: 'div { a {} &:hover a {} }',
+			expect: 'div { a {} &:hover a {} }',
+			warnings: 0,
+			args: ['always']
+		},
+		{
+			source: '.a { button {} > button {} }',
+			expect: '.a { button {} > button {} }',
 			warnings: 0,
 			args: ['always']
 		}
