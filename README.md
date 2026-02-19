@@ -1,8 +1,6 @@
 # Stylelint Use Nesting [<img src="https://jonneal.dev/stylelint-logo.svg" alt="stylelint" width="90" height="90" align="right">][stylelint]
 
 [![NPM Version][npm-img]][npm-url]
-[![Build Status][cli-img]][cli-url]
-[![Support Chat][git-img]][git-url]
 
 [Stylelint Use Nesting] is a [stylelint] rule to enforce nesting when it is
 possible in CSS.
@@ -127,10 +125,6 @@ The `syntax` option allows you to specify the syntax of the source files being p
 }
 ```
 
-[cli-img]: https://img.shields.io/travis/csstools/stylelint-use-nesting/main.svg
-[cli-url]: https://travis-ci.org/csstools/stylelint-use-nesting
-[git-img]: https://img.shields.io/badge/support-chat-blue.svg
-[git-url]: https://gitter.im/stylelint/stylelint
 [npm-img]: https://img.shields.io/npm/v/stylelint-use-nesting.svg
 [npm-url]: https://www.npmjs.com/package/stylelint-use-nesting
 
